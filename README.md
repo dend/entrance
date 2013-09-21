@@ -1,7 +1,7 @@
 EnTrance
 ====
 
-EnTrance is the unofficial A State of Trance (ASOT) client for Windows Phone 8. It allows trance music fans to easily download and listen to the latest episodes of the official A State of Trance podcast.
+EnTrance is the unofficial [A State of Trance (ASOT)](http://www.astateoftrance.com/) client for Windows Phone 8. It allows trance music fans to easily download and listen to the latest episodes of the official A State of Trance podcast.
 
 It is licensed under the [Microsoft Public License (MS-PL)](http://www.microsoft.com/en-us/openness/licenses.aspx).
 
