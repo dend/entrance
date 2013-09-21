@@ -1,0 +1,55 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Entrance.Views.AboutView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True" shell:SystemTray.Opacity="0" shell:SystemTray.ForegroundColor="#FFF">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Background>
+            <ImageBrush Opacity=".5" ImageSource="/Images/Core/background.png" AlignmentX="Left" 
+                        Stretch="UniformToFill"></ImageBrush>
+        </Grid.Background>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0">
+            <Image Source="/Images/Core/logo_sub.png"></Image>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock Style="{StaticResource PhoneTextTitle3Style}" Text="Version:"></TextBlock>
+            <TextBlock FontWeight="Bold" Style="{StaticResource PhoneTextTitle3Style}" Text="1.0.0"></TextBlock>
+
+            <TextBlock Margin="12,12,0,0"  Style="{StaticResource PhoneTextTitle3Style}" Text="Developed by Den Delimarsky." TextWrapping="Wrap"></TextBlock>
+            <TextBlock Margin="12,12,0,0" Style="{StaticResource PhoneTextTitle3Style}" Text="EnTrance is not an official A State of Trance client and at this moment is not endorsed by Armada Music or Armin van Buuren." TextWrapping="Wrap"></TextBlock>
+
+            <TextBlock Margin="12,12,0,0" Style="{StaticResource PhoneTextTitle3Style}" Text="Any other trademarks mentioned in the application are properties of their respective owners." TextWrapping="Wrap"></TextBlock>
+
+            <TextBlock Margin="12,12,0,0" Style="{StaticResource PhoneTextTitle3Style}" Text="EnTrance used the Techno Font for the logo:" TextWrapping="Wrap"></TextBlock>
+            <HyperlinkButton Margin="0,4,0,0" HorizontalAlignment="Left" Content="Font design by FunRecord" Foreground="#6f98d4" NavigateUri="https://twitter.com/funrecord" TargetName="AboutPage.xaml"></HyperlinkButton>
+
+            <HyperlinkButton Margin="0,20,0,0" HorizontalAlignment="Left" Content="Developer's Website" Foreground="#6f98d4" NavigateUri="http://dennisdel.com" TargetName="AboutPage.xaml"></HyperlinkButton>
+            <HyperlinkButton HorizontalAlignment="Left" Content="Developer's Twitter" Foreground="#6f98d4" NavigateUri="http://twitter.com/DennisCode" TargetName="AboutPage.xaml"></HyperlinkButton>
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Bottom" Grid.Row="1">
+            <Button x:Name="btnFeedback" Click="btnFeedback_Click" Content="Send Feedback" Margin="0,190,0,0"></Button>
+            <Button x:Name="btnRate" Click="btnRate_Click" Content="Rate &amp; Review"></Button>
+        </StackPanel>
+    </Grid>
+
+</phone:PhoneApplicationPage>

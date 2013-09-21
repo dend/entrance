@@ -1,0 +1,8 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:v="clr-namespace:Entrance.ViewModels">
+
+    <v:MainPageViewModel x:Name="MainPageViewModel" />
+    <v:EpisodeDetailViewModel x:Name="EpisodeDetailViewModel" />
+</ResourceDictionary>

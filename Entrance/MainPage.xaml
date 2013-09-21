@@ -1,0 +1,136 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Entrance.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" shell:SystemTray.Opacity="0" shell:SystemTray.ForegroundColor="#FFF">
+
+    <phone:PhoneApplicationPage.Resources>
+        <Storyboard x:Name="TranslationStoryboard" RepeatBehavior="Forever">
+            <DoubleAnimation
+                    Storyboard.TargetName="EpisodeLogoTranslate"
+                    Storyboard.TargetProperty="Y"
+                    From="0" To="-400" Duration="0:0:15"
+                    AutoReverse="True"/>
+            <DoubleAnimation
+                    Storyboard.TargetName="DownloadLogoTranslate"
+                    Storyboard.TargetProperty="Y"
+                    From="0" To="-400" Duration="0:0:15"
+                    AutoReverse="True"/>
+        </Storyboard>
+    </phone:PhoneApplicationPage.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Opacity=".9" ImageSource="Images/Core/background.png"></ImageBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <Image Source="Images/Core/logo_sub.png" Stretch="Uniform"></Image>
+        </StackPanel>
+
+        <Grid Margin="-12,-12,-12,0" x:Name="ContentPanel" Grid.Row="1">
+            <phone:Pivot DataContext="{Binding Instance, Source={StaticResource MainPageViewModel}}">
+                <phone:PivotItem DataContext="{Binding PodcastContainer}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" Height="100" VerticalAlignment="Top">
+                            <Canvas VerticalAlignment="Top">
+                                <Canvas.Clip>
+                                    <RectangleGeometry Rect="0,0,480,100"></RectangleGeometry>
+                                </Canvas.Clip>
+
+                                <Image Source="Images/Layout/podcast_logo.jpg" MaxHeight="720" MaxWidth="720" Opacity=".9" 
+                                       Stretch="Uniform" x:Name="PodcastLogoContainer">
+                                    <Image.RenderTransform>
+                                        <TranslateTransform x:Name="EpisodeLogoTranslate"></TranslateTransform>
+                                    </Image.RenderTransform>
+                                </Image>
+                            </Canvas>
+
+                            <Grid>
+                                <Grid.Background>
+                                    <SolidColorBrush Color="Black" Opacity=".5"></SolidColorBrush>
+                                </Grid.Background>
+
+                                <TextBlock Foreground="White" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle1Style}" 
+                                            TextWrapping="Wrap" Text="episodes"></TextBlock>
+                            </Grid>
+                        </Grid>
+
+                        <TextBlock Grid.Row="1" Foreground="White" Text="No Podcasts" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                           TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"
+                           Visibility="{Binding Podcasts, Converter={StaticResource PodcastCollectionCountToVisibility}}"></TextBlock>
+                        
+                        <ListBox HorizontalContentAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Podcasts}"
+                                 ItemTemplate="{StaticResource PodcastItemTemplate}" ItemContainerStyle="{StaticResource StretchContainerStyle}">
+                        </ListBox>
+                    </Grid>
+                </phone:PivotItem>
+
+                <phone:PivotItem>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" Height="100" VerticalAlignment="Top">
+                            <Canvas VerticalAlignment="Top">
+                                <Canvas.Clip>
+                                    <RectangleGeometry Rect="0,0,480,100"></RectangleGeometry>
+                                </Canvas.Clip>
+
+                                <Image Source="Images/Layout/podcast_logo.jpg" MaxHeight="720" MaxWidth="720" Opacity=".9" 
+                                       Stretch="Uniform" x:Name="DownloadedLogo">
+                                    <Image.RenderTransform>
+                                        <TranslateTransform x:Name="DownloadLogoTranslate"></TranslateTransform>
+                                    </Image.RenderTransform>
+                                </Image>
+                            </Canvas>
+
+                            <Grid>
+                                <Grid.Background>
+                                    <SolidColorBrush Color="Black" Opacity=".5"></SolidColorBrush>
+                                </Grid.Background>
+
+                                <TextBlock Foreground="White" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle1Style}" 
+                                            TextWrapping="Wrap" Text="downloaded"></TextBlock>
+                            </Grid>
+                        </Grid>
+
+                        <TextBlock Grid.Row="1" Foreground="White" Text="No Stored Episodes" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                           TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"
+                           Visibility="{Binding Downloaded, Converter={StaticResource PodcastCollectionCountToVisibility}}"></TextBlock>
+                        
+                        <ListBox HorizontalContentAlignment="Stretch" Grid.Row="1" ItemsSource="{Binding Downloaded}"
+                                 ItemTemplate="{StaticResource PodcastItemTemplate}" ItemContainerStyle="{StaticResource StretchContainerStyle}">
+                        </ListBox>
+                    </Grid>
+                </phone:PivotItem>
+            </phone:Pivot>
+        </Grid>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True">
+            <shell:ApplicationBarIconButton Click="About_Click" Text="about" IconUri="Images/AppBar/question.png"></shell:ApplicationBarIconButton>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

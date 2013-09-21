@@ -1,0 +1,33 @@
+﻿using Entrance.Models;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Windows;
+using System.Windows.Data;
+
+namespace Entrance.Converters
+{
+    public class CollectionCountToVisibilityConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            Debug.WriteLine(targetType);
+
+            ObservableCollection<Track> collection = (ObservableCollection<Track>)value;
+            if (collection == null || collection.Count == 0)
+            {
+                return Visibility.Visible;
+            }
+            else
+            {
+                return Visibility.Collapsed;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

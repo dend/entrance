@@ -1,0 +1,4 @@
+C:\Users\Dennis\Dropbox\Projects\Entrance\EnTrance.AudioAgent\Bin\Release\EnTrance.AudioAgent.dll
+C:\Users\Dennis\Dropbox\Projects\Entrance\EnTrance.AudioAgent\Bin\Release\EnTrance.AudioAgent.pdb
+C:\Users\Dennis\Dropbox\Projects\Entrance\EnTrance.AudioAgent\obj\Release\EnTrance.AudioAgent.dll
+C:\Users\Dennis\Dropbox\Projects\Entrance\EnTrance.AudioAgent\obj\Release\EnTrance.AudioAgent.pdb
