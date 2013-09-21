@@ -3,6 +3,9 @@ EnTrance
 
 EnTrance is the unofficial [A State of Trance (ASOT)](http://www.astateoftrance.com/) client for Windows Phone 8. It allows trance music fans to easily download and listen to the latest episodes of the official A State of Trance podcast.
 
+![Screenshot 1](https://github.com/dend/entrance/blob/master/Screenshots/wp_ss_20130920_0002.png?raw=true) ![Screenshot 2](https://github.com/dend/entrance/blob/master/Screenshots/wp_ss_20130920_0003.png?raw=true) 
+![Screenshot 3](https://github.com/dend/entrance/blob/master/Screenshots/wp_ss_20130920_0005.png?raw=true) ![Screenshot 3](https://github.com/dend/entrance/blob/master/Screenshots/wp_ss_20130920_0006.png?raw=true)
+
 It is licensed under the [Microsoft Public License (MS-PL)](http://www.microsoft.com/en-us/openness/licenses.aspx).
 
 ### I don't want to mess with source code. Can I download your app on my Windows Phone?
