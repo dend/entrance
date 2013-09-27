@@ -10,7 +10,7 @@ EnTrance is the unofficial [A State of Trance (ASOT)](http://www.astateoftrance.
 It is licensed under the [Microsoft Public License (MS-PL)](http://www.microsoft.com/en-us/openness/licenses.aspx).
 
 ### I don't want to mess with source code. Can I download your app on my Windows Phone?
-Yes. It is currently awaiting certification. Once that is complete, you will see a shiny new link appear here.
+Yep. [Right here](http://www.windowsphone.com/en-us/store/app/entrance/2613fe69-6167-40f8-91a0-d4c9ae1342c9).
 
 ### Can I re-distribute EnTrance in the Windows Phone Store?
 Yes. Feel free to use it for **your own** podcast or someone else's podcast. Remember - legal conditions apply to you. I, the developer, am in no way responsible for your subsequent use of EnTrance in the context of your own project.
